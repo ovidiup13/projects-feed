@@ -1,42 +1,29 @@
-import React from "react";
-import { useProducts, Product } from "./products";
+import React, { useState } from 'react';
+import SearchBox from './components/SearchBox/SearchBox';
+import { FilteredFeed, DefaultFeed } from './components/Feed/Feed';
+import { useProjects } from './projects';
 
-import "./App.css";
-
-const sortByVotes = (p1: Product, p2: Product) => p2.upvotes - p1.upvotes;
-const sortByDate = (p1: Product, p2: Product) => p2.createdAt.getTime() - p1.createdAt.getTime();
+import './App.css';
 
 const App: React.FunctionComponent = () => {
-  const products = useProducts();
+  const projects = useProjects();
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const topProducts = products.sort(sortByVotes).slice(0, 3);
-  const latestProducts = products.sort(sortByDate);
+  const feed = Boolean(searchTerm) ? (
+    <FilteredFeed term={searchTerm} />
+  ) : (
+    <DefaultFeed projects={projects} />
+  );
 
   return (
     <div className='App'>
-      <section>
-        <h2>top 3 projects</h2>
-        <ProjectList products={topProducts} />
-      </section>
+      <header>
+        <SearchBox onSearchChanged={setSearchTerm} />
+      </header>
 
-      <section>
-        <h2>latest projects</h2>
-        <ProjectList products={latestProducts} />
-      </section>
-    </div>
-  );
-};
+      <main>{feed}</main>
 
-const ProjectList: React.FunctionComponent<{ products: Product[] }> = ({ products }) => {
-  if (products.length === 0) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-      <code>
-        <pre>{JSON.stringify(products, null, 2)}</pre>
-      </code>
+      <footer></footer>
     </div>
   );
 };

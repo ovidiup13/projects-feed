@@ -1,20 +1,20 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import App from "./App";
-import { useProducts } from "./products";
-jest.mock("./products");
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from './App';
+import { useProjects } from './projects';
+jest.mock('./projects');
 
-const useProductsMock = useProducts as jest.Mock;
+const useProjectsMock = useProjects as jest.Mock;
 
 beforeEach(() => {
-  useProductsMock.mockReturnValue([]);
+  useProjectsMock.mockReturnValue([]);
 });
 
 afterEach(() => {
-  useProductsMock.mockReset();
+  useProjectsMock.mockReset();
 });
 
-test("renders the project sections", () => {
+test('renders the project sections', () => {
   const { getByText } = render(<App />);
 
   const topSection = getByText(/top 3 projects/i);
@@ -24,24 +24,9 @@ test("renders the project sections", () => {
   expect(latestSection).toBeInTheDocument();
 });
 
-test("renders the initial state", async () => {
-  const { getAllByText } = render(<App />);
+test('renders the search input', () => {
+  const { getByRole } = render(<App />);
 
-  const loadingTop = getAllByText(/Loading/i);
-  expect(loadingTop).toHaveLength(2);
-});
-
-test("renders the projects", async () => {
-  useProductsMock.mockReturnValue([
-    {
-      id: 1,
-      name: "Example project",
-      description: "example description",
-      authors: [],
-      createdAt: new Date(),
-      upvotes: 2,
-    },
-  ]);
-
-  // TODO: test project list is showing ok
+  const searchBox = getByRole('searchbox');
+  expect(searchBox).toBeInTheDocument();
 });
