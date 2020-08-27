@@ -1,8 +1,8 @@
 .title {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
-  color: #8c8c8c;
-  font-size: 36px;
-  line-height: 40px;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-weight: var(--font-style);
+  letter-spacing: var(--letter-spacing);
+  color: var(--muted);
+  font-size: var(--heading-font-size);
 }

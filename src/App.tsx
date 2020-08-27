@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 import { FilteredFeed, DefaultFeed } from './components/Feed/Feed';
 import { useProjects } from './projects';
 
-import './App.css';
+import styles from './App.module.css';
 
 const App: React.FunctionComponent = () => {
   const projects = useProjects();
@@ -16,8 +16,8 @@ const App: React.FunctionComponent = () => {
   );
 
   return (
-    <div className='App'>
-      <header>
+    <div className={styles.app}>
+      <header className={styles.header}>
         <SearchBox onSearchChanged={setSearchTerm} />
       </header>
 

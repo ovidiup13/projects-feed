@@ -1,27 +1,29 @@
 .common {
-  font-family: Helvetica;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
+  font-size: var(--font-size);
 }
 
 .container {
   display: flex;
   flex-flow: row nowrap;
-  padding: 18px 20px;
   align-items: center;
-  border-left: 0.5px solid #8c8c8c;
-  border-right: 0.5px solid #8c8c8c;
-  border-top: 0.5px solid #8c8c8c;
+
+  padding: 18px 20px;
+  border-left: 0.5px solid var(--muted);
+  border-right: 0.5px solid var(--muted);
+  border-top: 0.5px solid var(--muted);
 }
 
 .container:first-child {
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--section-border-radius) var(--section-border-radius) 0 0;
 }
 
 .container:last-child {
-  border-radius: 0 0 8px 8px;
-  border-bottom: 0.5px solid #8c8c8c;
+  border-radius: 0 0 var(--section-border-radius) var(--section-border-radius);
+  border-bottom: 0.5px solid var(--muted);
+}
+
+.container:only-child {
+  border-radius: var(--section-border-radius);
 }
 
 .details {
@@ -29,15 +31,8 @@
 }
 
 .title {
-  composes: common;
   font-weight: bold;
   margin: 0;
-  line-height: 28px;
-}
-
-.authors {
-  composes: common;
-  line-height: 28px;
 }
 
 .meta {
@@ -47,24 +42,19 @@
 }
 
 .description {
-  composes: common;
-  color: #8c8c8c;
-  line-height: 28px;
+  color: var(--muted);
 }
 
 .time {
-  composes: common;
-  color: #8c8c8c;
-  line-height: 28px;
+  color: var(--muted);
   margin-bottom: 15px;
 }
 
 .upvotes {
-  composes: common;
-  color: #8c8c8c;
+  color: var(--muted);
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 40px;
   text-align: center;
-  padding: 7px 25px;
   max-width: 50px;
+  border-radius: 40px;
+  padding: 7px 25px;
 }

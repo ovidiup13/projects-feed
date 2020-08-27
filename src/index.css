@@ -1,3 +1,37 @@
-html {
-  font-family: 'Helvetica', sans-serif;
+:root {
+  --font-family: 'Helvetica', sans-serif;
+  --font-size: 24px;
+  --font-weight: normal;
+  --font-style: normal;
+  --letter-spacing: -0.4px;
+
+  --heading-font-size: 36px;
+
+  --section-border-radius: 8px;
+
+  --search-background-color: #e8e8e8;
+  --search-border-color: rgba(0, 0, 0, 0.1);
+
+  --text-color: #000000;
+  --muted: #8c8c8c;
+
+  --mobile-breakpoint: 700px;
+}
+
+@media screen and (max-width: 700px) {
+  :root {
+    --font-size: 18px;
+    --heading-font-size: 24px;
+  }
+}
+
+html,
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  font-weight: var(--font-style);
+  letter-spacing: var(--letter-spacing);
+
+  color: var(--text-color);
 }
