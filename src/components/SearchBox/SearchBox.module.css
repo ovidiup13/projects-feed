@@ -1,0 +1,53 @@
+.common {
+  font-family: Helvetica;
+  font-size: 36px;
+  line-height: 40px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -0.4px;
+}
+
+.box {
+  position: relative;
+}
+
+.search {
+  composes: common;
+
+  /* Safari Styles their own inputs, we clear it out. */
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+
+  height: 80px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #e8e8e8;
+  padding: 20px 30px;
+}
+
+.button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  height: 74px;
+  width: 96px;
+  background-color: #e8e8e8;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.search::placeholder {
+  color: #8c8c8c;
+  opacity: 1;
+}
+
+.search:focus {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  /* Small hack to account for the border change. */
+  padding: 17px 27px;
+}
