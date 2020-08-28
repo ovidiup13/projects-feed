@@ -7,7 +7,7 @@ import styles from './ProjectSection.module.css';
 type ProjectSectionProps = { title: string; projects: Project[] };
 
 const ProjectSection: React.FunctionComponent<ProjectSectionProps> = ({ title, projects }) => (
-  <section>
+  <section aria-label={title}>
     <h2 className={styles.title}>{title}</h2>
     <ProjectList projects={projects} />
   </section>

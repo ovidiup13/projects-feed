@@ -7,7 +7,6 @@ const ReportButton: React.FunctionComponent = () => {
 
   const setButtonMaxWidth = () => {
     const appElement = document.querySelector('.app');
-    console.log('got app element');
     setWidth(appElement?.clientWidth!);
   };
 

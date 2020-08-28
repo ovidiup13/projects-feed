@@ -10,9 +10,11 @@ dayjs.extend(relativeTime);
 const ProjectComponent: React.FunctionComponent<{ project: Project }> = ({ project }) => {
   const { name, authors, description, created_at, upvotes } = project;
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role='listitem'>
       <div className={styles.details}>
-        <div className={styles.title}>{name}</div>
+        <div className={styles.title} role='heading'>
+          {name}
+        </div>
         <div className={styles.authors}>{authors.join(', ')}</div>
         <div className={styles.description}>{description}</div>
       </div>
