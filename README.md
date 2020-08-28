@@ -38,6 +38,13 @@ run:
 vercel
 ```
 
+## Improvements
+
+- Set the search debounce time to 200 ms
+- Responsive fixed positioning for the report button
+- Better ARIA roles, tab indexing
+- Keyboard shortcuts to focus on search box and clear the search
+
 ## Built with
 
 - React v16.9

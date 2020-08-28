@@ -22,7 +22,17 @@ export const useFindProjects = (term: string): Project[] => {
   const filterFn = useCallback(filterByName(term), [term]);
 
   useEffect(() => {
-    fetchProjects(filterFn).then(setProjects);
+    let isSubscribed = true;
+
+    fetchProjects(filterFn)
+      .then((projects) => (isSubscribed ? setProjects(projects) : null))
+      .catch((err) => (isSubscribed ? console.error(err) : null));
+
+    const cleanUp = () => {
+      isSubscribed = false;
+    };
+
+    return cleanUp;
   }, [filterFn]);
 
   return projects;
