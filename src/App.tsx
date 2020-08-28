@@ -4,6 +4,7 @@ import { FilteredFeed, DefaultFeed } from './components/Feed/Feed';
 import { useProjects } from './projects';
 
 import styles from './App.module.css';
+import ReportButton from './components/ReportButton/ReportButton';
 
 const App: React.FunctionComponent = () => {
   const projects = useProjects();
@@ -16,14 +17,13 @@ const App: React.FunctionComponent = () => {
   );
 
   return (
-    <div className={styles.app}>
+    <div className={`${styles.app} app`}>
       <header className={styles.header}>
         <SearchBox onSearchChanged={setSearchTerm} />
       </header>
 
       <main>{feed}</main>
-
-      <footer></footer>
+      <ReportButton />
     </div>
   );
 };

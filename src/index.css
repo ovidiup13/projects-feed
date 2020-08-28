@@ -1,19 +1,25 @@
+@import-normalize;
+
 :root {
   --font-family: 'Helvetica', sans-serif;
   --font-size: 24px;
   --font-weight: normal;
   --font-style: normal;
   --letter-spacing: -0.4px;
+  --line-height: 28px;
 
   --heading-font-size: 36px;
+  --heading-line-height: 40px;
 
   --section-border-radius: 8px;
 
   --search-background-color: #e8e8e8;
   --search-border-color: rgba(0, 0, 0, 0.1);
 
-  --text-color: #000000;
+  --text-color-black: #000000;
+  --text-color-white: #ffffff;
   --muted: #8c8c8c;
+  --danger: #d11514;
 
   --mobile-breakpoint: 700px;
 }
@@ -21,6 +27,7 @@
 @media screen and (max-width: 700px) {
   :root {
     --font-size: 18px;
+    --line-height: 24px;
     --heading-font-size: 24px;
   }
 }
@@ -32,6 +39,7 @@ body {
   font-weight: var(--font-weight);
   font-weight: var(--font-style);
   letter-spacing: var(--letter-spacing);
+  line-height: var(--line-height);
 
-  color: var(--text-color);
+  color: var(--text-color-black);
 }

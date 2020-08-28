@@ -1,11 +1,13 @@
 .common {
   font-size: var(--font-size);
+  line-height: var(--line-height);
 }
 
 .container {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  justify-content: space-between;
 
   padding: 18px 20px;
   border-left: 0.5px solid var(--muted);
@@ -48,6 +50,7 @@
 .time {
   color: var(--muted);
   margin-bottom: 15px;
+  white-space: nowrap;
 }
 
 .upvotes {

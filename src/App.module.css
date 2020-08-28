@@ -1,4 +1,5 @@
 .app {
+  transform: inherit;
   max-width: 668px;
   margin: 0 auto;
 }

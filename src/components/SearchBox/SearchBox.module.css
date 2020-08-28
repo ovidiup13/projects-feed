@@ -1,5 +1,6 @@
 .common {
   font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
   background-color: var(--search-background-color);
 }
 
@@ -36,6 +37,13 @@
   background-color: var(--search-background-color);
 }
 
+.button > svg {
+  display: block;
+  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+}
+
 .search::placeholder {
   color: var(--muted);
   opacity: 1;
@@ -61,5 +69,10 @@
   .button {
     height: 54px;
     width: 72px;
+  }
+
+  .button > svg {
+    width: 28px;
+    height: 28px;
   }
 }

@@ -12,7 +12,7 @@ const ProjectComponent: React.FunctionComponent<{ project: Project }> = ({ proje
   return (
     <div className={styles.container}>
       <div className={styles.details}>
-        <h3 className={styles.title}>{name}</h3>
+        <div className={styles.title}>{name}</div>
         <div className={styles.authors}>{authors.join(', ')}</div>
         <div className={styles.description}>{description}</div>
       </div>

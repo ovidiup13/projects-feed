@@ -5,4 +5,5 @@
   letter-spacing: var(--letter-spacing);
   color: var(--muted);
   font-size: var(--heading-font-size);
+  line-height: var(--heading-line-height);
 }
